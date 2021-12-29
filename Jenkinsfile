@@ -5,7 +5,7 @@ node('nodejs') {
 
         git branch: 'main',
 
-            url: 'https://github.com/YOUR_GITHUB_USER/do400-pipelines-control'
+            url: 'https://github.com/superchi3/do400-pipelines-control'
 
     }
 
