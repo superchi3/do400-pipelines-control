@@ -1,23 +1,36 @@
+pipeline {
 
-node('nodejs') {
+    agent {
 
-    stage('Checkout') {
+        node {
 
-        git branch: 'main',
+            label 'nodejs'
 
-            url: 'https://github.com/superchi3/do400-pipelines-control'
-
-    }
-
-    stage('Backend Tests') {
-
-        sh 'node ./backend/test.js'
+        }
 
     }
 
-    stage('Frontend Tests') {
+    stages {
 
-        sh 'node ./frontend/test.js'
+        stage('Backend Tests') {
+
+            steps {
+
+                sh 'node ./backend/test.js'
+
+            }
+
+        }
+
+        stage('Frontend Tests') {
+
+            steps {
+
+                sh 'node ./frontend/test.js'
+
+            }
+
+        }
 
     }
 
